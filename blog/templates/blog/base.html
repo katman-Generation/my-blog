@@ -17,6 +17,7 @@
             <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
         {% else %}
             <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock">login</span></a>
+            <a href="{% url 'create_account' %}" class="top-menu"><span class="glyphicon glyphicon-lock">Create Account</span></a>
         {% endif %}
         <h1><a href="/">KG-FOUNDATION Blog</a></h1>
         <h3>Choosing to associate with those who want to be better and make the world a better place is not selfish, it’s correct.</h3>

@@ -3,11 +3,13 @@
 {% block content %}
     {% for post in posts %}
         <article class="post">
+            <p class="text-decoration-line-through " >post by {{ post.author }}</p>
             <time class="date">
                 {{ post.published_date }}
             </time>
             <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
+            <p>{{ post.text|linebreaksbr | truncatewords:"30" }}</p>
+            <a href="{% url 'post_detail' pk=post.pk %}">READMORE</a>
         </article>
     {% endfor %}
 {% endblock %}
