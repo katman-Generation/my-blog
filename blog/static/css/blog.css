@@ -6,7 +6,7 @@ body{
     padding-left: 15px;
 }
 .page-header {
-    background-color: #C25100;
+    background-color: #14df40;
     margin-top: 0;
     margin-bottom: 40px;
     padding: 20px 20px 20px 40px;
@@ -17,7 +17,7 @@ body{
 .page-header h1 a:visited,
 .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 30pt;
     text-decoration: none;
 }
 
@@ -74,4 +74,14 @@ h4 {
 .btn-secondary:hover {
     color: #FFFFFF;
     background-color: #C25100;
+}
+footer{
+    text-align: center;
+    color: green;
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+}
+
+footer a{
+    color: rgb(158, 9, 9);
 }

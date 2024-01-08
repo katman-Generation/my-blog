@@ -14,7 +14,7 @@
         {% if user.is_authenticated %}
             <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus">new</span></a>
             <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit">draft</span></a>
-            <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+            <p class="top-menu">Hello <a href="{% url 'my_profile' %}">{{ user.username }}</a><small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
         {% else %}
             <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock">login</span></a>
             <a href="{% url 'create_account' %}" class="top-menu"><span class="glyphicon glyphicon-lock">Create Account</span></a>
@@ -30,5 +30,6 @@
             </div>
         </div>
     </div>
+    <footer>Copyright © 2023 KG-FOUNDATION: Developed & Designed By <a href="https://katman-generation.github.io/my-portfolia/">Tatenda Katema</a></footer>
 </body>
 </html>

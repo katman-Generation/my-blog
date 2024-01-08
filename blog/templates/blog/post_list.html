@@ -1,15 +1,100 @@
-{% extends "blog/base.html" %}
+{% extends "blog/index.html" %}
+<div class="clearfix content">
+	<div class="content_title"><h2>Latest Blog Post</h2></div>
 
-{% block content %}
-    {% for post in posts %}
-        <article class="post">
-            <p class="text-decoration-line-through " >post by {{ post.author }}</p>
-            <time class="date">
-                {{ post.published_date }}
-            </time>
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.text|linebreaksbr | truncatewords:"30" }}</p>
-            <a href="{% url 'post_detail' pk=post.pk %}">READMORE</a>
-        </article>
-    {% endfor %}
-{% endblock %}
+	{% block content %}
+		{% for post in posts %}
+			<!--<article class="post">
+				<p class="text-decoration-line-through " >post by {{ post.author }}</p>
+				<time class="date">
+					{{ post.published_date }}
+				</time>
+				<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+				<p>{{ post.text|linebreaksbr | truncatewords:"30" }}</p>
+				<a href="{% url 'post_detail' pk=post.pk %}">READMORE</a>
+			</article>-->
+			<div class="clearfix single_content">
+				<div class="clearfix post_date floatleft">
+					<div class="date">
+						<h3>{{ post.published_date.date }}</h3>
+					</div>
+				</div>
+				<div class="clearfix post_detail">
+					<h2><a href=""> {{ post.title }}</a></h2>
+					<div class="clearfix post-meta">
+						<p><a href="{% url 'my_profile' %}"><span><i class="fa fa-user"></i>{{ post.author }}</span></a> <!--<span><i class="fa fa-clock-o"></i> 20 Jan 2014</span> <span><i class="fa fa-comment"></i> 4 comments</span> <span><i class="fa fa-folder"></i> Category</span>--></p>
+					</div>
+					<div class="clearfix post_excerpt">
+						<!--<img src="images/thumb.png" alt=""/>-->
+						<p>{{ post.text|linebreaksbr | truncatewords:"30" }}</p>
+					</div>
+					<a href="{% url 'post_detail' pk=post.pk %}">Continue Reading</a>
+				</div>
+			</div>
+		{% endfor %}
+	{% endblock %}
+</div>
+<!--<div class="clearfix content">
+	<div class="content_title"><h2>Latest Blog Post</h2></div>
+	<div class="clearfix single_content">
+		<div class="clearfix post_date floatleft">
+			<div class="date">
+				<h3>27</h3>
+				<p>January</p>
+			</div>
+		</div>
+		<div class="clearfix post_detail">
+			<h2><a href="">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. </a></h2>
+			<div class="clearfix post-meta">
+				<p><span><i class="fa fa-user"></i> Admin</span> <span><i class="fa fa-clock-o"></i> 20 Jan 2014</span> <span><i class="fa fa-comment"></i> 4 comments</span> <span><i class="fa fa-folder"></i> Category</span></p>
+			</div>
+			<div class="clearfix post_excerpt">
+				<img src="images/thumb.png" alt=""/>
+				<p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a 
+				ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class 
+				aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos </p>
+			</div>
+			<a href="">Continue Reading</a>
+		</div>
+	</div>
+	
+	<div class="clearfix single_content">
+		<div class="clearfix post_date floatleft">
+			<h3>27</h3>
+			<p>January</p>
+		</div>
+		<div class="clearfix post_detail">
+			<h2><a href="">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. </a></h2>
+			<div class="clearfix post-meta">
+				<p><span>Admin</span> <span>20 Jan 2014</span> <span>4 comments</span> <span>Category</span></p>
+			</div>
+			<div class="clearfix post_excerpt">
+				<img src="images/thumb.png" alt=""/>
+				<p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a 
+				ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class 
+				aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos </p>
+			</div>
+			<a href="">Continue Reading</a>
+		</div>
+	</div>
+	
+	<div class="clearfix single_content">
+		<div class="clearfix post_date floatleft">
+			<h3>27</h3>
+			<p>January</p>
+		</div>
+		<div class="clearfix post_detail">
+			<h2><a href="">Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. </a></h2>
+			<div class="clearfix post-meta">
+				<p><span>Admin</span> <span>20 Jan 2014</span> <span>4 comments</span> <span>Category</span></p>
+			</div>
+			<div class="clearfix post_excerpt">
+				<img src="images/thumb.png" alt=""/>
+				<p>Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a 
+				ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class 
+				aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos </p>
+			</div>
+			<a href="">Continue Reading</a>
+		</div>
+	</div>					
+</div>-->

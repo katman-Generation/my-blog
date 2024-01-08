@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
-from .models import Post
+from .models import Post, Profile
 from .forms import PostForm
 
 
@@ -64,6 +64,8 @@ def post_remove(request, pk):
 
 def create_account(request):
     if request.method == 'POST':
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
         username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
@@ -76,8 +78,9 @@ def create_account(request):
             elif User.objects.filter(username=username).exists():
                 messages.info(request, 'Username Taken')
                 return redirect('create_account')
+            
             else:
-                user = User.objects.create_user(username=username, email=email, password=password)
+                user = User.objects.create_user(first_name=first_name, last_name=last_name,username=username, email=email, password=password)
                 user.save()
                 
                 # log user in and redirect to setting page
@@ -85,10 +88,10 @@ def create_account(request):
                 auth.login(request, user_login)
                 
                 # create a profile object for the new user
-                #user_model = User.objects.get(username=username)
-                #new_profile = Profile.objects.create(user=user_model, id_user=user_model.id)
-                #new_profile.save()
-                return redirect('post_list')
+                user_model = User.objects.get(username=username)
+                new_profile = Profile.objects.create(user=user_model, id_user=user_model.id)
+                new_profile.save()
+                return redirect('my_profile')
                 
         else:
             messages.info(request, 'password not matching')
@@ -97,3 +100,33 @@ def create_account(request):
         
     else:
         return render(request, 'registration/create.html')
+
+@login_required(login_url='login')
+def my_profile(request):
+    
+    user_profile = Profile.objects.get(user=request.user)
+    
+    if request.method == 'POST':
+        
+        if request.FILES.get('image') == None:
+            image = user_profile.profileimg
+            bio = request.POST['bio']
+            location = request.POST['location']
+            
+            user_profile.profileimg = image
+            user_profile.bio = bio
+            user_profile.location = location
+            user_profile.save()
+            
+        if request.FILES.get('image') != None:
+            image = request.FILES.get('image')
+            bio = request.POST['bio']
+            location = request.POST['location']
+            
+            user_profile.profileimg = image
+            user_profile.bio = bio
+            user_profile.location = location
+            user_profile.save()
+        
+        return redirect('my_profile')
+    return render(request, 'registration/profile.html', {'user_profile': user_profile})
