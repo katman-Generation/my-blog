@@ -1,0 +1,108 @@
+@media screen and (min-width: 681px) {
+    body{
+        margin: 0;
+    }
+    /* the header styles */
+    .header{
+        padding: 5px;
+        background-color: black;
+        height: 25vh;
+        overflow: hidden;
+    }
+    .top{
+        display: flex;
+        justify-content: space-between;
+    }
+    .top h1{
+        color: aliceblue;
+    }
+    .nav{
+        display: flex;
+        justify-content: flex-end;
+        margin: 10px;
+    }
+    .nav a{
+        margin: 10px;
+        color: aqua;
+        text-decoration: none;
+    }
+    .navi{
+        background-color: yellow;
+        margin: 0 10px;
+        height: 45%;
+        overflow: hidden;
+        display: flex;
+    }
+    .navi a{
+        margin: 20px;
+        height: 50%;
+        width: auto;
+        text-decoration: none;
+        color: black;
+    }
+
+    /* the bottom body styles */
+    .wbody{
+        padding: 5px 20px;
+        display: inline-flex;
+        justify-content: space-between;
+        width: 98vw;
+        margin: 0;
+        height: 70vh;
+    }
+
+    .rbody{
+        flex-basis: 100%;
+        margin: 10px;
+    }
+    .rbody h2{
+        background-image: url(./latest_post_bg.png);
+        background-position: top;
+        background-size: auto;
+        background-repeat: no-repeat;
+        height: 30%;
+        color: aliceblue;
+        padding-left: 50px;
+    }
+
+    .postheading{
+        display: inline-flex;
+        width: 100%;
+
+    }
+    .postfff{
+        flex-basis: 100%;
+        background-color: yellow;
+    }
+    .postfff h3{
+        padding: 0 20px;
+    }
+    .postfff h5{
+        padding: 0 20px;
+    }
+
+    .postheading div{
+        width: 80px;
+        height: 80px;
+    }
+
+   /* .postheading {
+        margin: auto;
+        padding: 10px;
+    }*/
+    .post-details p{
+        margin: 10px 40px;
+        padding: 0 30px;
+    }
+    .newsletter input{
+        margin: 10px;
+    }
+    .newsletter button{
+        background-color: yellow;
+        margin: 10px;
+        width: 50%;
+        height: 5vh;
+        border:  none;
+        border-radius: 20%;
+    }
+}

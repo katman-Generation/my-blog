@@ -1,0 +1,98 @@
+@media only screen and (max-width: 680px){
+    body{
+        margin: 0;
+    }
+    /* the header styles */
+    .header{
+        padding: 5px;
+        background-color: black;
+        height: 50vh;
+        overflow: hidden;
+    }
+    .top h3{
+        text-align: center;
+    }
+    .top h1{
+        color: aliceblue;
+    }
+    .nav{
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+    }
+    .nav a{
+        margin: 10px;
+        color: aqua;
+        text-decoration: none;
+    }
+    .navi{
+        background-color: yellow;
+        margin: 0 10px;
+        height: 45%;
+        overflow: hidden;
+        display: flex;
+    }
+    .navi a{
+        margin: 20px;
+        height: 50%;
+        width: auto;
+        text-decoration: none;
+        color: black;
+    }
+
+    /* the bottom body styles */
+    .wbody{
+        padding: 5px 20px;
+        justify-content: space-between;
+        width: 85vw;
+        margin: 0;
+    }
+
+    .rbody{
+        margin: 10px;
+        overflow: hidden;
+    }
+    .rbody h2{
+        background-image: url(./latest_post_bg.png);
+        background-position: top;
+        background-size: auto;
+        background-repeat: no-repeat;
+        height: 30%;
+        color: aliceblue;
+        padding-left: 50px;
+        font-size: 100%;
+    }
+
+    .postheading{
+        display: inline-flex;
+        width: 100%;
+
+    }
+    .postfff{
+        flex-basis: 100%;
+    }
+
+    .date{
+        height: 80%;
+        background-color: aqua;
+    }
+
+    .postheading h3{
+        margin: auto;
+    }
+    .post-details p{
+        margin: 10px;
+    }
+    .newsletter input{
+        margin: 10px;
+    }
+    .newsletter button{
+        background-color: yellow;
+        margin: 10px;
+        width: 50%;
+        height: 5vh;
+        border:  none;
+        border-radius: 20%;
+    }
+
+}
