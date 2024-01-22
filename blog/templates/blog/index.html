@@ -23,6 +23,7 @@
 				<h1><a href="/" style="color: yellow; text-decoration: none;">KG-FOUNDATION</a> BLOG</h1>
 				{% if user.is_authenticated %}
 					<h3 style="color: aliceblue;">Hello <a href="{% url 'my_profile' %}" style="color: yellow;">{{ user.username }}</a></h3>
+					<img src="{{user_profile.profileimg.url}}" alt="profile">
 					<div class="nav">
 						<a href="{% url 'post_new' %}">NEW</a>
 						<a href="{% url 'post_draft_list' %}">DRAFT</a>
@@ -36,7 +37,7 @@
 				{% endif %}
 			</div>
 			<div class="navi">
-				<a href="">HOME</a>
+				<a href="/">HOME</a>
 				<a href="">ABOUT US</a>
 				<a href="">CONTACT US</a>
 			</div>
