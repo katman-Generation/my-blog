@@ -9,8 +9,9 @@ from .forms import PostForm
 
 def post_list(request):
     """for  the view of the home page"""
+    user_profile = Profile.objects.get(user=request.user)
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    return render(request, 'blog/post_list.html', {'posts': posts,'user_profile': user_profile})
 
 def post_detail(request, pk):
     """returning the detail page"""

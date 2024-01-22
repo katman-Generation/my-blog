@@ -14,7 +14,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="{% static 'css/base.css' %}" rel="stylesheet" media="screen">
-		<link href="{% static 'css/pbase.css' %}" rel="stylesheet" media="screen">			
+		<link href="{% static 'css/pbase.css' %}" rel="stylesheet" media="screen">	
 	</head>
 
 	<body>
@@ -22,7 +22,7 @@
 			<div class="top">
 				<h1><a href="/" style="color: yellow; text-decoration: none;">KG-FOUNDATION</a> BLOG</h1>
 				{% if user.is_authenticated %}
-					<h3 style="color: aliceblue;">Hello <a href="{% url 'my_profile' %}" style="color: yellow;">{{ user.username }}</a></h3>
+					<h3 for="" style="color: aliceblue;">Hello <a href="{% url 'my_profile' %}" style="color: yellow;">{{ user.username }}</a></h3>
 					<img src="{{user_profile.profileimg.url}}" alt="profile">
 					<div class="nav">
 						<a href="{% url 'post_new' %}">NEW</a>
